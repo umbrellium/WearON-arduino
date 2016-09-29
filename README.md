@@ -2,8 +2,8 @@
 [WearON](http://umbrellium.co.uk/initiatives/wearon/) is a prototyping platform for wearable designers to connect their devices quickly and simply to a smartphone, to the web and to each other.
 
 ## About WearON arduino code
-g
-The arduino codes were developed separately using
+
+The arduino code was developed separately using
 * [Arduino Uno](https://www.arduino.cc/en/Main/ArduinoBoardUno) and Red Bear Lab [BLE Mini](http://redbearlab.com/blemini/)
 * Red Bear Lab [Blend Micro](http://redbearlab.com/blendmicro/)
 
