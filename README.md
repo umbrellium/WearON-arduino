@@ -17,7 +17,8 @@ The arduino code was developed separately using
 * On installing the RBL libraries
     * Follow the instruction on [Arduino](https://www.arduino.cc/en/Guide/Libraries) to install the libraries in `lib` into your arduino program
     * you can also log onto Red Bear Lab's website to download their latest Blend Micro and BLE Mini libraries. The ones in `lib` folder are the libraries that were used to develop WearON. 
-    * `RBL_nRF8001.zip` is for Blend Micro board, `RBL_BLEMini.zip` is for BLE Mini board
+    * For BLE Mini board, use `RBL_BLEMini.zip`
+    * For Blend Micro board, use `RBL_nRF8001.zip` and use `Blend_Add-On.zip` in order for Arduino IDE to support your Blend Micro, more information on setup can be found [here](http://redbearlab.com/getting-started-blendmicro)
 
 ## About
 WearON is an open source initiative created by [Umbrellium](http://umbrellium.co.uk/) built for the community and for us to quickly prototype connected wearables and iot devices. Join us in improving the project by contributing through github or simply drop us a message if there is any question or issue with using the platform!
