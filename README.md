@@ -11,7 +11,7 @@ The arduino code was developed separately using
 * For `WearONApp_arduino_code_ble_mini`
     * When uploading the code onto Arduino Uno, make sure that you disconnect the wires that connects BLE Mini to arduino pin 0 and 1. After you have uploaded the code onto the controller board, reconnect back the wires, restart the board and you are good to go!
 
-* The arduino code was developer on arduino version 1.0.5. Go to [Arduino](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) to download the previous version
+* The arduino code was developed on arduino version 1.0.5. Go to [Arduino](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) to download the previous version
 
 * For `WearONApp_arduino_code_blend_micro`
     * When uploading the code, use board `Blend Micro 3.3V/8MHz` 
