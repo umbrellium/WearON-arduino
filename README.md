@@ -24,7 +24,7 @@ The arduino code was developed separately using
       * Follow the instruction on [Arduino](https://www.arduino.cc/en/Guide/Libraries) to install the libraries in `lib` into your arduino program
       * Install the hardware folder from `lib`->`Blend_Add-On.zip` into your Arduino Sketchbook folder
       * Replace the main.cpp in your arduino folder with the one in `lib`->`Blend_Add-On.zip` (this is a very important step, if you didnt do this step, your Blend Micro board might lost its firmware, hence disabling the usb connection)
-  *Alternatively, you can also check out our [Wiki](https://github.com/umbrellium/WearON-arduino/wiki) for instructions on setting up Blend Micro board
+  * Alternatively, you can also check out our [Wiki](https://github.com/umbrellium/WearON-arduino/wiki) for instructions on setting up Blend Micro board
   * Open the arduino file `WearONApp_arduino_code_blend_micro`
   * Note: When uploading the code, use board `Blend Micro 3.3V/8MHz` 
 
