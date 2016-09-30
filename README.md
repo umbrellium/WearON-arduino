@@ -18,7 +18,7 @@ The arduino code was developed separately using
 
 ##For `WearONApp_arduino_code_blend_micro`
   * Follow the set of instructions on how to set up the Arduino IDE setup for the first time in order to use board `Blend Micro 3.3V/8MHz`
-    *Install the following libraries into your Arduino library folder:
+  *Install the following libraries into your Arduino library folder:
       *`lib`->`ble-sdk-arduino-0.9.0.beta.zip` 
       *`lib`->`RBL_nRF8001.zip` 
       * Follow the instruction on [Arduino](https://www.arduino.cc/en/Guide/Libraries) to install the libraries in `lib` into your arduino program
