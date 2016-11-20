@@ -239,11 +239,11 @@ void loop(){
 
   if((analog_enabled_A2 == true) && (analog_enabled_A3==true) && (analog_enabled_A4==true) && (analog_enabled_A5==true)){
     all_pins_on = true;
-    if(send_data_in_two == false){
-      send_data_in_two = true;
+    if(send_data_in_two == false){ 
+      send_data_in_two = true; //send data in group of 2, for send_data_in_two = true: its to send A2 and A3
     }
     else{
-      send_data_in_two = false;
+      send_data_in_two = false; //send data in group of 2, for send_data_in_two = true: its to send A4 and A5
     }
   }
   else{
