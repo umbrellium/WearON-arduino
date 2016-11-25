@@ -44,7 +44,6 @@ const int analogPin5 = A5;
 //(there is an issue with BLE write: board can send up to 3 analog pin data to phone per time, 
 //but if it sends more than 4 then it stall the last pin data
 boolean send_data_in_three = false;
-boolean all_pins_on = false;
 
 void setup(){
 
@@ -131,6 +130,10 @@ void loop(){
 
     else if (data0 == 0x04) //command to change everything to default state (off mode) - binary: 00000100 (data 0)
     {
+      analog_enabled_A0 = false;
+      analog_enabled_A1 = false;
+      analog_enabled_A2 = false;
+      analog_enabled_A3 = false;
       analog_enabled_A4 = false;
       analog_enabled_A5 = false;
       digitalWrite(digitalPin9, LOW);
@@ -144,151 +147,81 @@ void loop(){
 
   }
 
+
   if (analog_enabled_A0)  // if analog reading enabled
   {
-    if(all_pins_on==false){
+    if(send_data_in_three == true){ //send_data_in_two = true (for A0, A1, A2)
       // Read and send out
       uint16_t valueA0 = analogRead(analogPin0);
-      tracker();
       BLEMini_write(0x0F);  // binary: 00001011 (data 0) 
       BLEMini_write(valueA0 >> 8); 
       BLEMini_write(valueA0);
-    }
-    else{
-      if(send_data_in_three == true){ //send_data_in_two = true (for A0, A1, A2)
-        // Read and send out
-        uint16_t valueA0 = analogRead(analogPin0);
-        tracker();
-        BLEMini_write(0x0F);  // binary: 00001011 (data 0) 
-        BLEMini_write(valueA0 >> 8); 
-        BLEMini_write(valueA0);
-      }
     }
   } 
 
   if (analog_enabled_A1)  // if analog reading enabled
   {
-    if(all_pins_on==false){
+    if(send_data_in_three == true){ //send_data_in_two = true (for A0, A1, A2)
       // Read and send out
       uint16_t valueA1 = analogRead(analogPin1);
-      tracker();
       BLEMini_write(0x0E);  // binary: 00001011 (data 0) 
       BLEMini_write(valueA1 >> 8); 
       BLEMini_write(valueA1);
-    }
-    else{
-      if(send_data_in_three == true){ //send_data_in_two = true (for A0, A1, A2)
-        // Read and send out
-        uint16_t valueA1 = analogRead(analogPin1);
-        tracker();
-        BLEMini_write(0x0E);  // binary: 00001011 (data 0) 
-        BLEMini_write(valueA1 >> 8); 
-        BLEMini_write(valueA1);
-      }
     }
   } 
 
   if (analog_enabled_A2)  // if analog reading enabled
   {
-    if(all_pins_on==false){
+    if(send_data_in_three == true){ //send_data_in_two = true (for A0, A1, A2)
       // Read and send out
       uint16_t valueA2 = analogRead(analogPin2);
-      tracker();
       BLEMini_write(0x0D);  // binary: 00001011 (data 0) 
       BLEMini_write(valueA2 >> 8); 
       BLEMini_write(valueA2);
-    }
-    else{
-      if(send_data_in_three == true){ //send_data_in_two = true (for A0, A1, A2)
-        // Read and send out
-        uint16_t valueA2 = analogRead(analogPin2);
-        tracker();
-        BLEMini_write(0x0D);  // binary: 00001011 (data 0) 
-        BLEMini_write(valueA2 >> 8); 
-        BLEMini_write(valueA2);
-      }
     }
   } 
 
 
   if (analog_enabled_A3)  // if analog reading enabled
   {
-    if(all_pins_on==false){
+    if(send_data_in_three == false){//send_data_in_two = false ( for A3, A4 and A5)
       // Read and send out
       uint16_t valueA3 = analogRead(analogPin3);
-      tracker();
       BLEMini_write(0x0C);  // binary: 00001011 (data 0) 
       BLEMini_write(valueA3 >> 8); 
       BLEMini_write(valueA3);
-    }
-    else{
-      if(send_data_in_three == false){//send_data_in_two = false ( for A3, A4 and A5)
-        // Read and send out
-        uint16_t valueA3 = analogRead(analogPin3);
-        tracker();
-        BLEMini_write(0x0C);  // binary: 00001011 (data 0) 
-        BLEMini_write(valueA3 >> 8); 
-        BLEMini_write(valueA3);
-      } 
-    }
+    } 
+
   } 
 
   if (analog_enabled_A4)  // if analog reading enabled
   {
-    if(all_pins_on==false){
+    if(send_data_in_three == false){//send_data_in_two = false ( for A3, A4 and A5)
       // Read and send out
       uint16_t valueA4 = analogRead(analogPin4);
-      tracker();
       BLEMini_write(0x0A);  // binary: 00001011 (data 0) 
       BLEMini_write(valueA4 >> 8); 
       BLEMini_write(valueA4);
-    }
-    else{
-      if(send_data_in_three == false){//send_data_in_two = false ( for A3, A4 and A5)
-        // Read and send out
-        uint16_t valueA4 = analogRead(analogPin4);
-        tracker();
-        BLEMini_write(0x0A);  // binary: 00001011 (data 0) 
-        BLEMini_write(valueA4 >> 8); 
-        BLEMini_write(valueA4);
-      }
     }
   } 
 
 
   if (analog_enabled_A5)  // if analog reading enabled
   {
-    if(all_pins_on==false){
+
+    if(send_data_in_three == false){//send_data_in_two = false ( for A3, A4 and A5)
       // Read and send out
       uint16_t valueA5 = analogRead(analogPin5);
-      tracker();
       BLEMini_write(0x0B);  // binary: 00001011 (data 0) 
       BLEMini_write(valueA5 >> 8); 
       BLEMini_write(valueA5);
     }
-    else{
-      if(send_data_in_three == false){//send_data_in_two = false ( for A3, A4 and A5)
-        // Read and send out
-        uint16_t valueA5 = analogRead(analogPin5);
-        tracker();
-        BLEMini_write(0x0B);  // binary: 00001011 (data 0) 
-        BLEMini_write(valueA5 >> 8); 
-        BLEMini_write(valueA5);
-      }
-    }
   } 
 
-  if((analog_enabled_A0 == true) && (analog_enabled_A1==true) && (analog_enabled_A2 == true) && (analog_enabled_A3==true) && (analog_enabled_A4==true) && (analog_enabled_A5==true)){
-    all_pins_on = true;
-    if(send_data_in_three == false){
-      send_data_in_three = true;
-    }
-    else{
-      send_data_in_three = false;
-    }
+  if(send_data_in_three == false){
+    send_data_in_three = true;
   }
   else{
-    all_pins_on = false;
     send_data_in_three = false;
   }
 

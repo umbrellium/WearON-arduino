@@ -50,7 +50,6 @@ int x =1;
 //(there is an issue with BLE write: board can send up to 3 analog pin data to phone per time, 
 //but if it sends more than 4 then it stall the last pin data
 boolean send_data_in_three = false;
-boolean four_pins_on = false;
 
 void setup(){
   // Default pins set to 9 and 8 for REQN and RDYN
@@ -153,6 +152,8 @@ void loop(){
 
     else if (data0 == 0x04) //command to change everything to default state (off mode) - binary: 00000100 (data 0)
     {
+      analog_enabled_A0 = false;
+      analog_enabled_A1 = false;
       analog_enabled_A2 = false;
       analog_enabled_A3 = false;
       analog_enabled_A4 = false;
@@ -257,7 +258,7 @@ void loop(){
     analog_enabled_A5 = false;
     digitalWrite(digitalPin9, LOW);
     digitalWrite(digitalPin10, LOW); 
-    trackerFromApp = 0;WearONApp_arduino_code_blend_micro_beta_version
+    trackerFromApp = 0; 
     x =0;
   } 
   else{
